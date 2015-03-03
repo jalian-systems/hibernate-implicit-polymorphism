@@ -12,8 +12,8 @@ public class IntegerConstantNode extends Node {
 	public IntegerConstantNode() {
 	}
 
-	public IntegerConstantNode(Long value) {
-		this.value = value;
+	public IntegerConstantNode(long value) {
+		this.value = Long.valueOf(value);
 	}
 
 	@Override

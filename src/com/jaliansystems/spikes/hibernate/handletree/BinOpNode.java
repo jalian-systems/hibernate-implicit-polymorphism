@@ -34,7 +34,23 @@ public class BinOpNode extends Node {
 			return isLessThan(left, right);
 		else if (op.equals("=="))
 			return isEquals(left, right);
+		else if (op.equals("+"))
+			return plus(left, right);
+		else if (op.equals("-"))
+			return minus(left, right);
 		return null;
+	}
+
+	private Object minus(Object left, Object right) {
+		assumeTrue(left instanceof Number);
+		assumeTrue(right instanceof Number);
+		return ((Number) left).longValue() - ((Number) right).longValue();
+	}
+
+	private Object plus(Object left, Object right) {
+		assumeTrue(left instanceof Number);
+		assumeTrue(right instanceof Number);
+		return ((Number) left).longValue() + ((Number) right).longValue();
 	}
 
 	private Object isEquals(Object left, Object right) {
